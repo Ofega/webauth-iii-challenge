@@ -56,7 +56,7 @@ function restricted(req, res, next) {
 
 router.use((error, req, res) => {
   res.status(error.status || 500).json({
-    file: './users/router',
+    file: 'router',
     method: req.method,
     url: req.url,
     status: error.status || 500,

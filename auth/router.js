@@ -11,7 +11,7 @@ router.post('/register', validateUserBody, (req, res, next) => {
   const hashedPassword = bcrypt.hashSync(password, 11);
 
   db.add({ username, password: hashedPassword, department }).then(user => {
-    res.status(201).json({ id: user.id, username: user.username, department });
+    res.status(201).json('New user created');
   }).catch(next);
 });
 
